@@ -7,6 +7,9 @@ inputs:
   java-distribution:
     default: "temurin"
     description: "Distribution of Java to use"
+  secret-token:
+    required: true
+    description: "GITHUB_TOKEN secret - needed auth to publish"
 runs:
   using: "composite"
   steps:
@@ -22,4 +25,4 @@ runs:
       run: bash gradlew publish
       shell: bash
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.secret-token }}
