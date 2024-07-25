@@ -22,7 +22,7 @@ runs:
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
     - name: Publish to GitHub Packages
-      run: bash gradlew publish
+      run: ./gradlew publish
       shell: bash
       env:
         GITHUB_TOKEN: ${{ inputs.secret-token }}
